@@ -1,0 +1,27 @@
+/* Styles */
+
+body{
+    color: white;
+    background-color: blue;
+    font-family: Montserrat;
+}
+
+.track {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 2rem;
+}
+
+.track div:first-child{
+    margin: auto;
+}
+
+.track div:first-child h3{
+    margin: 0;
+}
+
+@media (max-width:858px){
+    .track {
+        grid-template-columns: 1fr 1fr;
+    }
+}

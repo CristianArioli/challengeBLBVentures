@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Music Player</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    </head>
+    <body style="text-align:center;">
+        <h1 class="title">Music Player</h1>
+        <h2 class="subtitle">Put MP3 files on the tracks directory and add their entries to the api to see them here</h2>
+        
+        {% if musics %}
+        {% for music in musics %}
+            <div class="track">
+                <div>
+                    <h3>{{ music.title }}</h3>
+                </div>
+                <div>
+                    <audio controls style="width: 100%" preload="metadata">
+                        <source src="{% static 'tracks/'%}{{ music.path }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        {% endfor %} 
+        {% else %}
+            <h3>No api entries found</h3>
+        {% endif %}
+        <script type="text/javascript" src="{% static 'js/index.js' %}"> </script>
+    </body>
+</html>
+
+    <ul>
+        
+      </ul>
+      
+    
